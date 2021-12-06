@@ -372,6 +372,7 @@ export class UserService {
   }
   deleteLoggedUserLocal() {
     this.store.remove('logged_user');
+    this.store.clear()
   }
 
 

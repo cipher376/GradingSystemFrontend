@@ -43,6 +43,8 @@ import { GalleryModule } from 'ng-gallery';
 import { IconsComponent } from './icons/icons.component';
 import { LoaderComponent } from './loader/loader.component';
 import { LoaderBlockingComponent } from './loader-blocking/loader-blocking.component';
+import { CreateProgrammeComponent } from './create-programme/create-programme.component';
+import { CreateCourseComponent } from './create-course/create-course.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +69,8 @@ import { LoaderBlockingComponent } from './loader-blocking/loader-blocking.compo
     IconsComponent,
     LoaderComponent,
     LoaderBlockingComponent,
+    CreateProgrammeComponent,
+    CreateCourseComponent,
 
   ],
   imports: [

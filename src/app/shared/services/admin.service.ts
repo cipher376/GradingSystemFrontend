@@ -310,7 +310,7 @@ export class AdminService {
 
   loggedUserHasRole(role: USER_ROLE) {
     const userRoles: string[] = this.store.getObjectSync('logged_user_roles');
-    // console.log(userRoles);
+    console.log(userRoles);
     return userRoles?.includes(role)
   }
 
@@ -346,12 +346,19 @@ export class AdminService {
     if (this.loggedUserHasRole(USER_ROLE.ADMIN)) {
       Urls.home = '/app/dashboard/admin-dashboard';
     } else if (this.loggedUserHasRole(USER_ROLE.STUDENT)) {
-      Urls.home = '/app/dashboard/manager-dashboard';
+      Urls.home = '/app/dashboard/student-dashboard';
     } else if (this.loggedUserHasRole(USER_ROLE.LECTURER)) {
-      Urls.home = '/app/dashboard/company-manager-dashboard';
+      Urls.home = '/app/dashboard/lecturer';
     } else if (this.loggedUserHasRole(USER_ROLE.HOD)) {
-      Urls.home = '/app/dashboard/seller-dashboard';
+      Urls.home = '/app/dashboard/hod-dashboard';
     } else {
+      console.log(this.store.getObjectSync('logged_user'))
+      if(this.store.getObjectSync('logged_user')) {
+        // student registration form
+        Urls.home = '/app/student/form'
+        console.log('Student from redirection')
+        return;
+      }
       Urls.home = '/auth/login';
     }
   }

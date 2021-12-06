@@ -81,22 +81,10 @@ export class LoginComponent implements OnInit {
     }
     this._auth.login(this._loginForm.value).subscribe(
       res => {
-        // if ((res as Credentials).id) {
-        //   console.log(res);
-        //   // fetch user identity and any other related details
-        //   this._userService.getMyProfile().subscribe(u => {
-        //     this._user = u as User;
-        //     console.log(this._user);
-        //     this._localStore.remove('lock_code');
-        //     // this.redirectUserToPage();
-        //   }, (error: any) => {
-        //     console.log(error);
-        //     this.authenticating = false;
-        //   });
-        // } else {
-        //   this._localStore.set('is_login', false).then(_ => { });
-        //   this.authenticating = false;
-        // }
+        console.log(res)
+        this.signal.setLoaderBlocking(false);// remove loader
+        this.adminService.setHomeUrl();
+        this._router.navigateByUrl(Urls.home);
       },
       error => {
         console.log(error);

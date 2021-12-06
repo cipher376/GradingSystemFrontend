@@ -1,10 +1,7 @@
 
-import { SuperAdminGuardService } from './../../../shared/services/guards/superadmin-guard.service';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AccountantDashboardComponent } from './accountant-dashboard/accountant-dashboard.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
-
 import { ManagerDashboardComponent } from './manager-dashboard/manager-dashboard.component';
 import { SellerDashboardComponent } from './seller-dashboard/seller-dashboard.component';
 import { CustomerAssistantGuardService } from 'src/app/shared/services/guards/customer-assistant-guard.service';
@@ -22,7 +19,7 @@ const routes: Routes = [
       },
 
       {
-        canActivate: [SuperAdminGuardService],
+        canActivate: [],
         path: 'admin-dashboard',
         component: AdminDashboardComponent,
         data: {
@@ -31,7 +28,7 @@ const routes: Routes = [
       },
       {
         canActivate: [],
-        path: 'manager-dashboard',
+        path: 'student-dashboard',
         component: ManagerDashboardComponent,
         data: {
           title: 'Manager dashboard'
@@ -39,36 +36,20 @@ const routes: Routes = [
       },
       {
         canActivate: [],
-        path: 'seller-dashboard',
+        path: 'lecturer-dashboard',
         component: SellerDashboardComponent,
         data: {
           title: 'Seller dashboard'
         }
       },
       {
-        canActivate: [CustomerAssistantGuardService],
-        path: 'customer-service-dashboard',
+        canActivate: [],
+        path: 'hod-dashboard',
         component: SellerDashboardComponent,
         data: {
           title: 'Customer service'
         }
-      },
-      {
-        canActivate: [],
-        path: 'accountant-dashboard',
-        component: AccountantDashboardComponent,
-        data: {
-          title: 'Accountant dashboard'
-        }
-      },
-      {
-        canActivate: [],
-        path: 'Employee-dashboard',
-        component: SellerDashboardComponent,
-        data: {
-          title: 'Employee dashboard'
-        }
-      },
+      }
     ]
   },
 

@@ -83,10 +83,14 @@ export const routes: Routes = [
         loadChildren: () => import('./pages/private/admin/admin-user.module').then(m => m.AdminUserModule)
       },
       {
-        canActivate: [UserGuard],
         canActivateChild: [],
         path: 'users',
         loadChildren: () => import('./pages/private/Users/user.module').then(m => m.UsersModule)
+      },
+      {
+        canActivateChild: [],
+        path: 'student',
+        loadChildren: () => import('./pages/private/student/student.module').then(m => m.StudentModule)
       }
     ]
   },

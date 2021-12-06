@@ -46,7 +46,7 @@ export class MyAuthService {
   }
 
   signUp(user: Credentials) {
-    return this.http.post<User>(environment.api_root_url + '/users/signup', user).pipe(
+    return this.http.post<User>(environment.api_root_url + '/signup', user).pipe(
       map(res => {
         // console.log(res);
         return res;
@@ -75,6 +75,8 @@ export class MyAuthService {
             this.redirectUrl = Urls.home;
             this.store.remove('lock_code');
             this.router.navigateByUrl(this.redirectUrl);
+          }, error => {
+
           });
         }
         return res;

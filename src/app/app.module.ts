@@ -33,6 +33,7 @@ import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 import { defaultSimpleModalOptions, SimpleModalModule } from 'ngx-simple-modal';
 import { ConfirmModalComponent } from './ui-components/confirm-modal/confirm-modal.component';
 import { LoaderNonBlockingComponent } from './ui-components/loader-non-blocking/loader-non-blocking.component';
+import { ApplicationComponent } from './pages/private/student/application/application.component';
 
 const APP_CONTAINERS = [
   DefaultLayoutComponent

@@ -55,96 +55,18 @@ export class MyNavigator {
         icon: 'icon-user-follow'
       },
       {
-        name: 'Manage Roles',
+        name: 'Roles',
         url: '/app/admin-users/manage-role',
         icon: 'icon-like'
       },
       {
-        name: 'Store managers',
+        name: 'Lecturers',
         url: '/app/admin-users/manager-to-store',
         icon: 'icon-people'
       },
-      {
-        name: 'Sellers',
-        url: '/app/admin-users/seller-to-store',
-        icon: 'icon-people'
-      },
-      {
-        name: 'Company managers',
-        url: '/app/admin-users/manager-to-company',
-        icon: 'icon-people'
-      }
     ]
   },
-  {
-    name: 'Store',
-    url: '/app/stores/all',
-    icon: 'icon-handbag',
-    children: [
-      {
-        name: 'All stores',
-        url: '/app/stores/all',
-        icon: 'icon-list'
-      },
-      {
-        name: 'Create store',
-        url: '/app/stores/create-store',
-        icon: 'icon-note'
-      },
-      {
-        name: 'Manage store policy',
-        url: '/app/stores/manage-policy',
-        icon: 'icon-link'
-      },
-      {
-        name: 'Store orders',
-        url: '/app/orders/orders-view',
-        icon: 'icon-basket-loaded'
-      },
-    ]
-  },
-  {
-    name: 'Company',
-    url: '/app/company/',
-    icon: 'icon-globe',
-    children: [
-      {
-        name: 'All companies',
-        url: '/app/company/list',
-        icon: 'icon-list'
-      },
-      {
-        name: 'Create company',
-        url: '/app/company/create',
-        icon: 'icon-note'
-      },
-      {
-        name: 'Manage company',
-        url: '/app/company/manage',
-        icon: 'icon-note'
-      },
-      {
-        name: 'Contracts',
-        url: '/app/company/contracts',
-        icon: 'icon-note'
-      }
-    ]
-  }];
-
-  mailMenu: NavData = {
-    name: 'Mail',
-    url: '/app/mail/in-box',
-    icon: 'icon-envelope',
-    // children: [
-    //   {
-    //     name: 'Messages',
-    //     url: '/app/mail/in-box',
-    //     icon: 'icon-speech'
-    //   },
-    // ]
-  };
-
-
+ ];
 
 
   commonMenu: NavData = {
@@ -165,29 +87,6 @@ export class MyNavigator {
     ]
   };
 
-  // sellerMenu: NavData[] = [
-  //   {
-  //     name: 'Seller Dashboard',
-  //     url: '/app/dashboard/seller-dashboard',
-  //     icon: 'icon-speedometer'
-  //   },
-  //   this.mailMenu,
-  //   {
-  //     name: 'Stores',
-  //     url: '/app/seller/seller-stores-view',
-  //     icon: 'icon-home'
-  //   },
-  //   {
-  //     name: 'Orders',
-  //     url: '/app/orders/orders-view',
-  //     icon: 'icon-basket-loaded'
-  //   },
-  //   {
-  //     name: 'Transactions',
-  //     url: '/app/seller/transactions',
-  //     icon: 'icon-wallet'
-  //   }
-  // ];
 
 
 
@@ -203,7 +102,7 @@ export class MyNavigator {
       name: 'Dashboard',
       url: Urls.home,
       icon: 'icon-speedometer'
-    }, this.mailMenu];
+    }];
 
     this.isAdmin = this.adminService.loggedUserHasRole(USER_ROLE.ADMIN);
     this.isStudent = this.adminService.loggedUserHasRole(USER_ROLE.STUDENT);
