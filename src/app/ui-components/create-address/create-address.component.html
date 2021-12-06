@@ -1,0 +1,84 @@
+<div class="card">
+  <div class="card-header">
+    <strong>Add or update  address</strong>
+  </div>
+  <div class="card-body" [formGroup]="addForm">
+    <div class="row">
+      <div class="form-group col-sm-8">
+        <ng-select formControlName="country" [allowClear]="false" [multiple]="false" [options]="countries||[]"
+          placeholder="Country" (selected)="setCountry($event)">
+        </ng-select>
+      </div>
+      <div class="alert alert-country" role="alert"
+        *ngIf="(addForm.get('country')?.errors) && addForm.get('country')?.dirty">
+        Select your country.
+      </div>
+      <div class="m-0 p-0">
+        <input type="hidden" formControlName="country">
+      </div>
+      <div class="form-group col-sm-4 ">
+        <input type="text" formControlName="postcode" class="form-control" placeholder="Postal Code">
+      </div>
+      <div class="alert alert-country" role="alert"
+        *ngIf="(addForm.get('postcode')?.errors) && addForm.get('postcode')?.dirty">
+        Provide postal code.
+      </div>
+
+    </div>
+    <div class="form-group">
+      <ng-select formControlName="state" [allowClear]="false" [multiple]="false" [options]="selectedStates||[]"
+        placeholder="State">
+      </ng-select>
+    </div>
+    <div class="alert alert-state" role="alert" *ngIf="(addForm.get('state')?.errors) && addForm.get('state')?.dirty">
+      Select your state or region.
+    </div>
+
+    <div class="form-group">
+      <input type="text" class="form-control" formControlName="city" placeholder="City">
+    </div>
+    <div class="alert alert-city" role="alert" *ngIf="(addForm.get('city')?.errors) && addForm.get('city')?.dirty">
+      Select your city or town.
+    </div>
+
+
+    <div class="form-group">
+      <input type="text" formControlName="street" class="form-control" placeholder="Street">
+    </div>
+    <div class="alert alert-street" role="alert"
+      *ngIf="(addForm.get('street')?.errors) && addForm.get('street')?.dirty">
+      Provide your street.
+    </div>
+
+    <div class="form-group">
+      <input type="text" formControlName="apartment" class="form-control" placeholder="Apartment">
+    </div>
+    <div class="alert alert-apartment" role="alert"
+      *ngIf="(addForm.get('apartment')?.errors) && addForm.get('apartment')?.dirty">
+      Provide your apartment.
+    </div>
+
+
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+          <input type="number" formControlName="lat" class="form-control" placeholder="Latitude">
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <input type="number" formControlName="lng" class="form-control" placeholder="Longitude">
+        </div>
+      </div>
+      <div class="alert alert-lat" role="alert" *ngIf="(addForm.get('lat')?.errors) && addForm.get('lat')?.dirty">
+        Provide your google map latitude.
+      </div>
+      <div class="alert alert-lng" role="alert" *ngIf="(addForm.get('lng')?.errors) && addForm.get('lng')?.dirty">
+        Provide your google map longitude.
+      </div>
+    </div>
+
+
+    <div class="col-12 col-sm-12 mb-3 ">
+      <button type="button" class="btn btn-block btn-primary" (click)="onSaveAddress()">Save address</button>
+    </div>
+  </div>
+</div>

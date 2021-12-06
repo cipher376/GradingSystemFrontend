@@ -1,0 +1,72 @@
+<div class="card">
+  <div class="card-header">
+    <strong>Add | update policy</strong>
+  </div>
+  <div class="card-body" [formGroup]="policyForm">
+
+    <div class="form-group">
+      <ng-select formControlName="ptype" [allowClear]="false" [multiple]="false" [options]="ptypes"
+        placeholder="Policy type">
+      </ng-select>
+    </div>
+    <div class="alert alert-state" role="alert"
+      *ngIf="(policyForm.get('ptype')?.errors) && policyForm.get('ptype')?.dirty">
+      Select policy type.
+    </div>
+
+    <div class="form-group">
+      <input id="policy_subject" class="form-control" type="text" name="policy_subject" class="form-control"
+        formControlName="subject" placeholder="Subject">
+    </div>
+    <div class="alert alert-danger" role="alert"
+      *ngIf="(policyForm.get('subject')?.errors) && policyForm.get('subject')?.dirty">
+      Provide policy subject.
+    </div>
+
+    <div class="form-group" *ngIf="selectedPolicyType === policy_type.POLICY">
+      <input id="policy_object" class="form-control" type="text" name="policy_object" class="form-control"
+        formControlName="object" placeholder="Effector (Object)" tooltip='Receiver of the policy action'>
+    </div>
+    <div class="alert alert-danger" role="alert"
+      *ngIf="(policyForm.get('object')?.errors) && policyForm.get('object')?.dirty">
+      Provide policy object.
+    </div>
+
+    <div class="form-group" *ngIf="selectedPolicyType === policy_type.POLICY">
+      <input id="policy_action" class="form-control" type="text" name="policy_action" class="form-control"
+        formControlName="action" placeholder="Action" tooltip=''>
+    </div>
+    <div class="alert alert-danger" role="alert"
+      *ngIf="(policyForm.get('action')?.errors) && policyForm.get('action')?.dirty">
+      Provide policy action.
+    </div>
+
+    <div class="form-group" *ngIf="selectedPolicyType === policy_type.POLICY">
+      <input id="policy_domain" class="form-control" type="text" name="policy_domain" class="form-control"
+        formControlName="domain" placeholder="Domain" tooltip=''>
+    </div>
+    <div class="alert alert-danger" role="alert"
+      *ngIf="(policyForm.get('domain')?.errors) && policyForm.get('domain')?.dirty">
+      Provide policy domain.
+    </div>
+
+    <div class="form-group" *ngIf="selectedPolicyType === policy_type.GROUP">
+      <input id="policy_role" class="form-control" type="text" name="policy_role" class="form-control"
+        formControlName="role" placeholder="Role" tooltip=''>
+    </div>
+    <div class="alert alert-danger" role="alert"
+      *ngIf="(policyForm.get('role')?.errors) && policyForm.get('role')?.dirty">
+      Provide policy role.
+    </div>
+
+
+    <div class="row">
+      <div class="col-4 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+        <button type="button" class="btn btn-block btn-primary" (click)="save()">Save</button>
+      </div>
+      <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+        <button type="button" class="btn btn-sm btn-warning" (click)="clear()">clear</button>
+      </div>
+    </div>
+  </div>
+</div>

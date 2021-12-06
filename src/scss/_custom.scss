@@ -1,0 +1,46 @@
+// Here you can add other styles
+@import '~@angular/cdk/overlay-prebuilt.css';
+@import '~ngx-toastr/toastr-bs4-alert';
+@import '~@swimlane/ngx-datatable/index.css';
+@import '~@swimlane/ngx-datatable/themes/bootstrap.scss';
+@import '~@swimlane/ngx-datatable/assets/icons.css';
+@import "~ng-pick-datetime/assets/style/picker.min.css";
+
+.dropZoneColor {
+  border: 3px dotted rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.12)
+}
+
+.dropZoneColorDrag {
+  border: 3px dotted rgba(0, 0, 0, 0.28);
+  background-color: grey
+}
+
+.dropZoneColorDrop {
+  border: 3px dotted rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.12)
+}
+
+
+#lightbox-lightbox {
+  margin-left: 15vw !important;
+  top: 4vh !important;
+}
+
+.cdk-overlay-container {
+  position: absolute !important;
+  z-index: 2010;
+  left: 0;
+  width: 100vw;
+  background: #00000096;
+}
+
+bs-datepicker-container, bs-daterangepicker-container {
+  z-index: 2011 !important;
+}
+
+
+.bg-primary {
+  background-color:  #fb6b6b  !important;
+  border: #fb6b6b;
+}

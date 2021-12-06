@@ -1,0 +1,69 @@
+<div class="card">
+  <div class="card-header">
+    <strong>Add new user</strong>
+  </div>
+  <div class="card-body" [formGroup]="regForm">
+    <div class="form-group">
+      <input id="fname" class="form-control" type="text" name="fname" class="form-control" formControlName="firstName"
+        placeholder="First name">
+    </div>
+    <div class="alert alert-danger" role="alert"
+      *ngIf="(regForm.get('firstName')?.errors) && regForm.get('firstName')?.dirty">
+      Provide your first name.
+    </div>
+
+    <div class="form-group">
+      <input id="lname" class="form-control" type="text" name="lname" class="form-control" formControlName="lastName"
+        placeholder="Last name">
+    </div>
+    <div class="alert alert-danger" role="alert"
+      *ngIf="(regForm.get('lastName')?.errors) && regForm.get('lastName')?.dirty">
+      Provide your last name.
+    </div>
+
+    <div class="form-group">
+      <input id="oname" class="form-control" type="text" name="oname" class="form-control" formControlName="otherName"
+        placeholder="Other name(s)">
+    </div>
+    <div class="alert alert-danger" role="alert"
+      *ngIf="(regForm.get('otherName')?.errors) && regForm.get('otherName')?.dirty">
+      Provide your other name(s).
+    </div>
+
+    <div class="form-group">
+      <input id="tel" class="form-control" type="tel" class="form-control" formControlName="reg_phone"
+        placeholder="Phone" (keyup)="onValidate('phone')">
+    </div>
+    <div class="alert alert-danger" role="alert"
+      *ngIf="(regForm.get('reg_phone')?.errors || !_isPhone) && regForm.get('reg_phone')?.dirty">
+      Invalid phone number.
+    </div>
+    <div class="form-group">
+      <input id="reg_email" type="email" formControlName="reg_email" (keyup)="onValidate('email')" placeholder="Email"
+        class="form-control">
+    </div>
+    <div class="alert alert-danger" role="alert"
+      *ngIf="regForm.get('reg_email')?.errors && regForm.get('reg_email')?.dirty">
+      Invalid email!
+    </div>
+    <div class="form-group">
+      <input id="reg_password" type="password" placeholder="Password" formControlName="reg_password"
+        (keyup)="onValidate('password')" class="form-control">
+    </div>
+    <div class="alert alert-danger" role="alert" *ngIf="
+                        (!_isPassword) && regForm.get('reg_password')?.dirty">
+      Password too weak (number, character, symbol and length of 8)
+    </div>
+    <div class="form-group">
+      <input id=" reg_password2" type="password" placeholder="Password again" formControlName="reg_password2"
+        (keyup)="onValidate('password2')" class="form-control">
+    </div>
+    <div class="alert alert-danger" role="alert" *ngIf="!_isMatch&& regForm.get('reg_password2')?.dirty">
+      Password do not much!
+    </div>
+    <!--/.row-->
+    <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+      <button type="button" class="btn btn-block btn-primary" (click)="onRegister()">Register</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,109 @@
+<div class="page-content page-container m-0 p-0" id="page-content">
+  <div class="">
+    <div class="row container d-flex justify-content-center m-0 p-0">
+      <div class="col-xl-12 col-md-12 m-0 p-0">
+        <div class="card user-card-full">
+          <div class="row m-l-0 m-r-0">
+            <div class="col-sm-4 bg-c-lite-green user-profile">
+              <div class="card-block text-center text-white">
+                <div class="m-b-25"> <img [src]="userImage || '../../../../../../../assets/img/avatars/user.png'"
+                    class="img-radius" alt="User-Profile-Image" height="100px" width="100px">
+                </div>
+                <!-- <h6 class="f-w-600">{{SelectedUser?.profile?.firstName}} {{SelectedUser?.profile?.lastName}}
+                  {{SelectedUser?.profile?.otherName}}</h6>
+                <p>{{SelectedUser?.profile?.about}}</p>  -->
+                <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
+                <div class="mt-3">
+                  <!-- <p class=" font-size-sm">{{SelectedUser?.address?.apartment}}
+                    {{SelectedUser?.address?.street}} {{SelectedUser?.address?.city}}
+                    {{SelectedUser?.address?.state}}
+                    {{SelectedUser?.address?.country}}</p> -->
+                  <button class="btn btn-warning" (click)="edit()">Edit</button>
+                  <button class="btn btn-primary" (click)="sendMessage()" *ngIf="!hideMessageBtn">Message</button>
+                  <br>
+                  <!-- <app-upload *ngIf="hideMessageBtn &&selectedUser?.id" [uploadButtonMessage]="'Upload photo'"
+                    [maximumUploads]="1" [uploadUrl]='uploadUrl' (uploadedFiles)="UploadedFiles = $event"></app-upload> -->
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-8">
+              <p style="float: right; font-weight: bold"><span class="avatar-status badge-success"></span>
+                online</p>
+              <div class="card-block">
+                <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Information</h6>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <p class="m-b-10 f-w-600">Email</p>
+                    <!-- <h6 class="text-muted f-w-400">{{SelectedUser?.email}}</h6>/ -->
+                  </div>
+                  <div class="col-sm-6">
+                    <p class="m-b-10 f-w-600">Phone</p>
+                    <!-- <h6 class="text-muted f-w-400">{{SelectedUser?.phone}}</h6> -->
+                  </div>
+                </div>
+
+                <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">Other</h6>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <p class="m-b-10 f-w-600">Date of birth</p>
+                    <!-- <h6 class="text-muted f-w-400">{{SelectedUser?.profile?.dateOfBirth | date}}</h6> -->
+                  </div>
+                  <div class="col-sm-6">
+                    <p class="m-b-10 f-w-600">User name</p>
+                       <!-- <h6 class="text-muted f-w-400">
+                   {{SelectedUser?.profile?.username || SelectedUser?.profile?.nickName}}</h6> -->
+                  </div>
+                </div>
+                <!-- <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600" *ngIf="loggedUserIsAdmin">Admin</h6> -->
+
+                <div class="row" *ngIf="loggedUserIsAdmin">
+                  <div class="col-sm-6">
+                    <p class="m-b-10 f-w-600">Phone verified</p>
+                    <!-- <h6 class="text-muted f-w-400">{{SelectedUser?.phoneVerified}}</h6> -->
+                  </div>
+                  <div class="col-sm-6">
+                    <p class="m-b-10 f-w-600">Email verified</p>
+                    <!-- <h6 class="text-muted f-w-400">{{SelectedUser?.emailVerified}}</h6> -->
+                  </div>
+                </div>
+                <div class="row" *ngIf="loggedUserIsAdmin">
+                  <div class="col-sm-6">
+                    <p class="m-b-10 f-w-600">Registered on</p>
+                    <!-- <h6 class="text-muted f-w-400">{{SelectedUser?.dateCreated | date}}</h6> -->
+                  </div>
+                  <div class="col-sm-6">
+                    <p class="m-b-10 f-w-600">Last updated on</p>
+                    <!-- <h6 class="text-muted f-w-400">{{SelectedUser?.dateModified | date}}
+                    </h6> -->
+                  </div>
+                </div>
+
+                <div class="row ml-1" *ngIf="loggedUserIsAdmin">
+                  <!-- <button class="btn btn-warning" (click)="addRole()">Add role</button> &nbsp;
+                  <button class="btn btn-info" *ngIf="selectedUserIsStoreManager" (click)="getManagerStores()">Manage
+                    stores</button> &nbsp;
+                  <button class="btn btn-success" *ngIf="selectedUserIsSeller" (click)="getSellerStores()">View
+                    stores</button> -->
+                  <!-- <button class="btn btn-primary" (click)="sendMessage()" *ngIf="!hideMessageBtn">Message</button> -->
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 ">
+        <div class="row pb-1" *ngIf="loggedUserIsAdmin">
+          <div class="col-12 card-header">
+            <!-- <strong>Stores owned by {{(selectedUser?.profile?.firstName)??selectedUser?.email}}</strong> -->
+          </div>
+          <!-- <app-user-roles [SelectedUser]="SelectedUser" class="row col-12 m-0 p-0 w-100"></app-user-roles> -->
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+</div>

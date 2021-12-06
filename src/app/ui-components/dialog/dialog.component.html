@@ -1,0 +1,29 @@
+<div bsModal #dialog="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog " [ngClass]="{'modal-sm': size==='sm', 
+    'modal-lg': size==='lg',
+    'modal-info': type == 1,
+    'modal-success':type== 4,
+    'modal-warning': type == 2,
+    'modal-danger': type == 6,
+    'modal-primary': type == 5
+ }" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">{{title}}</h4>
+                <button type="button" class="close" (click)="dialog.hide()" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>{{message}}</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary"
+                    (click)="cancelAction()">{{(cancelBtnMessage||'Cancel')}}</button>
+                <button type="button" class="btn btn-danger" *ngIf="confirm"
+                    (click)="broadcastAction()">{{(actionBtnMessage||'Ok')}}</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

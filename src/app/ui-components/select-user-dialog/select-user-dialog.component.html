@@ -1,0 +1,108 @@
+<div bsModal #dialog="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog " [ngClass]="{'modal-sm': size==='sm',
+    'modal-lg': size==='lg',
+    'modal-info': type == 1,
+    'modal-success':type== 4,
+    'modal-warning': type == 2,
+    'modal-danger': type == 6,
+    'modal-primary': type == 5
+ }" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">{{title}}</h4>
+                <button type="button" class="close" (click)="close()" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <!-- <div class="modal-body"> -->
+                <app-user-list  (selectedUserEvent)="SelectedUser=$event" [selectAll]="false" [Users]="Users" [loadUsers]="loadUsers" ></app-user-list>
+            <!-- </div> -->
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

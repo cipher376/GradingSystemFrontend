@@ -1,0 +1,106 @@
+<div class="card pr-0 ml-0 mr-0">
+  <div class="card-header ">
+    <div class="row pr-0 ml-0 mr-0">
+      <div class="col-md-6 col-sm-12"> <strong>{{title}}</strong></div>
+      <div class="col-md-6 col-sm-12">
+        <div class="row">
+          <div class="col-md-6 col-sm-12">
+            <div class="form-group row" *ngIf="!disableSearch">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-search"></i></span>
+                </div>
+                <input type="text" id="searchKey{{rand}}" name="searchKey{{rand}}" class="form-control" placeholder="Search"
+                  [(ngModel)]="searchKey" (keyup)="onSearch()">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <div class=" row" *ngIf="!disableSearch">
+              <div class="col-6  mb-1 mb-xl-0">
+                <button type="button" (click)="refresh()" class="btn  btn-default btn-sm" >
+                  <i class="icon-reload" tooltip="Refresh data"></i>
+                </button>
+              </div>
+              <div class="col-6   mb-1 mb-xl-0">
+                <button type="button" (click)="loadMore()" class="btn btn-default btn-sm">
+                  <i class="icon-cloud-download" tooltip="download data"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="card-body pl-0 pr-0 ml-0 mr-0 pt-0 mt-0">
+    <div class="pl-0 pr-0 ml-0 mr-0 pt-0 mt-0">
+      <table class="table table-responsive-sm table-bordered table-hover table-outline table-striped mb-0">
+        <thead class="thead-light">
+          <tr>
+            <th class="">S/N</th>
+            <th class="text-center" *ngIf="selectAll">
+              <input class="input" type="checkbox" name="selectall1" id="selectall1" (change)="allChecked=!allChecked"
+                *ngIf="allChecked === false" />
+              <input class="input" checked='checked' type="checkbox" name="selectall2" id="selectall2"
+                (change)="allChecked=!allChecked" *ngIf="allChecked === true" />
+            </th>
+            <th class="" *ngFor="let prop of tableColumns">{{prop.label}}</th>
+            <th class="" *ngIf="action">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of items; let i=index" style="cursor: pointer">
+            <td class="text-center">{{i+1}}</td>
+            <td class="text-center" (click)="itemSelected(item)" *ngIf="selectAll" style="cursor: pointer">
+              <input type="checkbox" name="select" (change)="addRemoveSelectedItems(item)" *ngIf="!allChecked" />
+              <input type="checkbox" checked='checked' name="select" (change)="addRemoveSelectedItems(item)"
+                *ngIf="allChecked" />
+            </td>
+            <td *ngFor="let prop of tableColumns" (click)="itemSelected(item)" style="cursor: pointer">
+              <strong class="text-muted" style="cursor: pointer">{{getPropValue(item, prop)}}</strong>
+            </td>
+            <td class="text-center" *ngIf="action" style="cursor: pointer">
+              <div class="btn-group" dropdown style="cursor: pointer">
+                <button type="button" class="btn btn-default" (click)="showDeleteDialog(item)"><i
+                    class="fa fa-trash text-danger"></i></button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <div class="row">
+        <div class="col-md-7 col-sm-12">
+          <ul class="pagination">
+            <li class="page-item" (click)="start()"><a class="page-link">
+                <</a> </li> <li class="page-item" (click)="previous()"><a class="page-link">
+                    <<</a> </li> <li class="page-item " *ngFor="let n of groups" (click)="move(n)"> <a class="page-link"
+                        [ngClass]="{'active': groupIndex===n}">{{n}}</a> </li>
+            <li class="page-item" (click)="next()"><a class="page-link">>></a>
+            </li>
+            <li class="page-item" (click)="end()"><a class="page-link">></a></li>
+          </ul>
+        </div>
+        <div class="col-md-5 col-sm-12">
+          <ul class="pagination">
+            <li class="page-item" (click)="groupSize=25"><a class="page-link" [ngClass]="{'active': groupSize===25}">25</a>
+            </li>
+            <li class="page-item" (click)="groupSize=50"><a class="page-link"
+                [ngClass]="{'active': groupSize===50}">50</a></li>
+            <li class="page-item" (click)="groupSize=100"><a class="page-link"
+                [ngClass]="{'active': groupSize===100}">100</a></li>
+            <li class="page-item" (click)="groupSize=200"><a class="page-link"
+                [ngClass]="{'active': groupSize===200}">200</a></li>
+            <!-- <li class="page-item" (click)="groupSize=100"><a class="page-link"
+                                [ngClass]="{'active': groupSize===100}">100</a></li> -->
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<app-dialog (actionEvent)='applyAction($event)'></app-dialog>

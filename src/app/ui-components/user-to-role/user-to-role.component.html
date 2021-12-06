@@ -1,0 +1,44 @@
+<!-- <div class="animated fadeIn">
+  <div class="   w-100">
+    <div class="card">
+      <div class="card-header">
+        <strong>Assign role</strong>
+        <small *ngIf="selectedUser"> To </small>
+        <strong>{{selectedUser?.email}}</strong>
+      </div>
+      <div class="card-body">
+        <form>
+          <div class="form-group " >
+            <select id="role" name="role" class="form-control" [(ngModel)]="selectedRole">
+              <option value="" selected="selected">Role</option>
+              <option *ngFor="let r of roles" value="{{r}}">
+                {{r}}
+              </option>
+            </select>
+          </div>
+
+          <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+            <button type="button" (click)="assignUser()" class="btn btn-block btn-primary">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <strong
+          *ngIf="selectedUser?.profile?.firstName">{{(selectedUser?.profile?.firstName+' '+selectedUser?.profile?.firstName)}}
+          roles</strong>
+        <strong *ngIf="!selectedUser?.profile?.firstName">{{selectedUser?.email}}</strong>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-3 col-sm-6 col-md mb-3 mb-xl-0 mt-2" *ngFor="let role of userRoles">
+            <button type=" button" class="btn btn-pill btn-sm btn-danger">
+              <i class=" fa fa-trash-o" (click)="deleteUserRole(role)">
+              </i>&nbsp; &nbsp; &nbsp;{{role}}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->

@@ -1,0 +1,26 @@
+<div class="upload-button m-2">
+  <input type="file" class="file-input" (change)="onFileSelected($event)" #fileUpload style="visibility:hidden">
+
+  <div class="file-upload">
+
+    <!-- {{fileName || "No file uploaded yet."}} -->
+
+    <button color="primary" class="upload-btn btn btn-success" (click)="fileUpload.click()">
+      <!--  <i>file</i> -->
+      {{uploadButtonMessage}}
+    </button>
+  </div>
+
+
+  <div class="progress" *ngIf="(uploadProgress.length)>0">
+    <div *ngFor="let progress of uploadProgress; let i = index;">
+      <progressbar class="progress" [value]=" progress" [max]="100" *ngIf="progress">
+      </progressbar>
+      <button class="btn-sm btn-warning" (click)="cancelUpload(i)"><i class="icon-close"></i></button><br>
+    </div><br>
+    <button class="btn-sm btn-danger" (click)="cancelUpload()"><i class="icon-close"></i></button>
+  </div>
+</div>
+
+
+<app-dialog (actionEvent)="applyAction($event)" #confirmUploadDialog></app-dialog>

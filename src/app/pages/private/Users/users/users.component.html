@@ -1,0 +1,22 @@
+<div class="animated fadeIn">
+
+    <tabset>
+        <tab>
+            <ng-template tabHeading><i class="icon-list"></i>&nbsp; <span>Users</span>
+                &nbsp;
+            </ng-template>
+            <app-user-list (selectedUserEvent)="SelectedUser=$event" (selectedUsersEvent)="SelectedUsers=$event"
+                [title]="title"  [showAction]='false'>
+            </app-user-list>
+        </tab>
+        <!-- <tab *ngIf="selectedUser">
+            <ng-template tabHeading><i class="icon-user"></i>&nbsp; <span>{{selectedUser?.email || 'User'}} Details</span>
+                &nbsp;
+            </ng-template>
+            <app-user-detail [SelectedUser]="selectedUser"></app-user-detail>
+        </tab> -->
+    </tabset>
+
+    <!--/.row-->
+</div>
+<app-dialog (actionEvent)="applyAction($event)" #dialog></app-dialog>

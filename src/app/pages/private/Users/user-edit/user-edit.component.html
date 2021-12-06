@@ -1,0 +1,14 @@
+<div class=" col-12 m-0 p-0">
+    <div class=" card-header p-2 m-0">
+        <h4 *ngIf="selectedUser?.profile?.firstName">{{selectedUser?.profile?.firstName+' '+selectedUser?.profile?.lastName}}</h4>
+        <h4 *ngIf="!selectedUser?.profile?.firstName">{{ selectedUser?.email}}</h4>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-sm-12 p-1 m-0">
+        <app-create-user-profile></app-create-user-profile>
+      </div>
+      <div class="col-md-6 col-sm-12 p-1 m-0">
+        <app-create-user-address></app-create-user-address>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,5 @@
+<app-data-table [tableData]='_roles' [action]='true' [selectAll]='true' [tableColumns]='columns'
+    (more)="loadMore($event)" (reload)="reload($event)" (selectItem)="onItemClicked($event)"
+    (selectItems)="onItemsSelected($event)" (deleteItem)="deleteRole($event)" [title]="title">
+</app-data-table>
+

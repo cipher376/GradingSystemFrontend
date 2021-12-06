@@ -1,0 +1,19 @@
+ <div class="animated fadeIn">
+     <tabset>
+         <tab>
+             <ng-template tabHeading><i class="icon-list"></i>&nbsp; Roles &nbsp;
+                 <!-- <span class="badge badge-pill badge-danger">{{(_items?.length || 0)}}</span> -->
+             </ng-template>
+             <app-role-list >
+             </app-role-list>
+         </tab>
+         <tab>
+             <ng-template tabHeading><i class="icon-list"></i>&nbsp; Create Policy Or User role &nbsp;
+                 <!-- <span class="badge badge-pill badge-danger">{{(_items?.length || 0)}}</span> -->
+             </ng-template>
+             <app-create-policy></app-create-policy>
+             <app-role-policy-list ></app-role-policy-list>
+
+         </tab>
+     </tabset>
+ </div>

@@ -1,0 +1,18 @@
+<div class="card col-12 m-0 p-0">
+  <div class="card-header">
+      <strong *ngIf="selectedUser?.profile?.firstName">{{(selectedUser?.profile?.firstName+' '+selectedUser?.profile?.otherName+' '+selectedUser?.profile?.lastName)}}
+          roles</strong>
+      <strong *ngIf="!selectedUser?.profile?.firstName">{{selectedUser?.email}}</strong>
+  </div>
+  <div class="card-body">
+      <div class="row">
+          <div class="col-3 col-sm-6 col-md mb-3 mb-xl-0 mt-2"
+              *ngFor="let role of userRoles">
+              <button type=" button" class="btn btn-pill btn-sm btn-danger">
+                  <i class=" fa fa-trash-o" (click)="deleteUserRole(role)">
+                  </i>&nbsp; &nbsp; &nbsp;{{role}}</button>
+          </div>
+      </div>
+
+  </div>
+</div>

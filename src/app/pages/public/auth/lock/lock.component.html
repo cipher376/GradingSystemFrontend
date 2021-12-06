@@ -1,0 +1,51 @@
+<div class="app-body" style="margin-top: 12%;">
+    <main class="main d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <div class="card-group">
+                        <div class="card p-4">
+                            <div class="card-body">
+                                <h4 *ngIf="stored_code">Lock code: {{stored_code}}</h4>
+                                <p *ngIf="stored_code"><small>Lock code hiding in {{counter}} seconds!</small></p>
+                                <form *ngIf="!stored_code">
+                                    <h1>Account Locked</h1>
+                                    <p class="text-muted">Enter code to unlock</p>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="icon-key"></i></span>
+                                        </div>
+                                        <input type="number" name="code" class="form-control" placeholder="Code"
+                                            [(ngModel)]="code" autocomplete="code" required>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <button type="button" class="btn btn-primary px-4"
+                                                (click)="unlock()">Unlock</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="card text-white bg-primary py-5 d-md-down-none" style="width:44%">
+                            <div class="card-body text-center">
+                                <div>
+                                    <h2>Login</h2>
+                                    <p>You can login if you don't remember your code</p>
+                                    <button type="button" routerLink="/auth/login"
+                                        class="btn btn-primary active mt-3">Login</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<div class="container d-flex h-100">
+    <div class="row justify-content-center align-self-center">
+
+    </div>
+</div>
