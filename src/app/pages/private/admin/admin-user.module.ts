@@ -21,6 +21,7 @@ import { ManageRoleComponent } from './manage-role/manage-role.component';
 import { CreatePolicyComponent } from './create-policy/create-policy.component';
 import { CreateRolePolicyComponent } from './create-role-policy/create-role-policy.component';
 import { RolePolicyListComponent } from './role-policy-list/role-policy-list.component';
+import { ManageProgrammeComponent } from './manage-programme/manage-programme.component';
 // import { SuperAdminGuardService } from '../../../shared/services/guards/superadmin-guard.service';
 // import { ManageStoreManagersComponent } from './manage-store-managers/manage-store-managers.component';
 // import { AdminUserDetailComponent } from './admin-user-detail/admin-user-detail.component';
@@ -55,13 +56,13 @@ const routes: Routes = [
         }
       },
 
-      // {
-      //   path: 'admin-users-list',
-      //   component: AdminUsersListComponent,
-      //   data: {
-      //     title: 'List all admin users'
-      //   }
-      // }
+      {
+        path: 'manage-programme',
+        component: ManageProgrammeComponent,
+        data: {
+          title: 'Add delete programmes  and courses'
+        }
+      }
     ]
   }
 ];
@@ -74,6 +75,7 @@ const routes: Routes = [
     CreatePolicyComponent,
     CreateRolePolicyComponent,
     RolePolicyListComponent,
+    ManageProgrammeComponent,
   ],
   imports: [
     CommonModule,

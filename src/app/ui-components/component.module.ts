@@ -45,6 +45,7 @@ import { LoaderComponent } from './loader/loader.component';
 import { LoaderBlockingComponent } from './loader-blocking/loader-blocking.component';
 import { CreateProgrammeComponent } from './create-programme/create-programme.component';
 import { CreateCourseComponent } from './create-course/create-course.component';
+import { AssignCourseProgrammeComponent } from './assign-course-programme/assign-course-programme.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { CreateCourseComponent } from './create-course/create-course.component';
     LoaderBlockingComponent,
     CreateProgrammeComponent,
     CreateCourseComponent,
+    AssignCourseProgrammeComponent,
 
   ],
   imports: [
@@ -110,6 +112,9 @@ import { CreateCourseComponent } from './create-course/create-course.component';
     IconsComponent,
     LoaderBlockingComponent,
     LoaderComponent,
+    CreateProgrammeComponent,
+    CreateCourseComponent,
+    AssignCourseProgrammeComponent,
 
   ],
   providers: [

@@ -61,8 +61,13 @@ export class MyNavigator {
       },
       {
         name: 'Lecturers',
-        url: '/app/admin-users/manager-to-store',
+        url: '/app/admin-users/lecture-list',
         icon: 'icon-people'
+      },
+      {
+        name: 'Programme & Courses',
+        url: '/app/admin-users/manage-programme',
+        icon: 'icon-pencil'
       },
     ]
   },

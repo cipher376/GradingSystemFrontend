@@ -2,6 +2,27 @@
   <div class="card-header">
     <strong>Previous School details</strong>
   </div>
-  <div class="card-body">
+  <div class="card-body"  [formGroup]="academicRecordForm">
+    <div class="form-group">
+      <input type="text" class="form-control" formControlName="schoolName" placeholder="School name">
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" formControlName="programme" placeholder="Programme studied at the school above">
+    </div>
+    <div class="form-group">
+      <input type="date" class="form-control" formControlName="yearOfCommencement" placeholder="When did you start?">
+    </div>
+    <div class="form-group">
+      <input type="date" class="form-control" formControlName="yearOfCompletion" placeholder="When did you complete?">
+    </div>
+    <div class="form-group">
+      <input type="number" class="form-control" formControlName="cgpa" placeholder="What's your cumulative grade point average">
+    </div>
+    <div class="col-12 col-sm-12 mb-3 ">
+      <div class="row">
+        <button type="button" class="btn btn-primary" (click)="createAcademicRecord()">Assign course</button> &nbsp;&nbsp;
+        <button type="button" class="btn  btn-warning btn-sm" (click)="clear()">clear</button>
+      </div>
+    </div>
   </div>
 </div>

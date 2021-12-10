@@ -1,0 +1,23 @@
+<div class="animated fadeIn">
+  <tabset>
+      <tab>
+          <ng-template tabHeading><i class="icon-list"></i>&nbsp; Create programme &nbsp;
+              <!-- <span class="badge badge-pill badge-danger">{{(_items?.length || 0)}}</span> -->
+          </ng-template>
+          <app-create-programme></app-create-programme>
+      </tab>
+      <tab>
+          <ng-template tabHeading><i class="icon-list"></i>&nbsp; Create courses &nbsp;
+              <!-- <span class="badge badge-pill badge-danger">{{(_items?.length || 0)}}</span> -->
+          </ng-template>
+          <app-create-course></app-create-course>
+
+      </tab>
+      <tab>
+        <ng-template tabHeading><i class="icon-list"></i>&nbsp; Add course to programme &nbsp;
+        </ng-template>
+        <app-assign-course-programme></app-assign-course-programme>
+
+    </tab>
+  </tabset>
+</div>

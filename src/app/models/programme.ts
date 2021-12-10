@@ -7,6 +7,7 @@ export class Programme  {
   id?: string;
   name?: string;
   numberYears?: number;
+  faculty?: string;
   students?: Student[];
   courses?: Course[];
   hod?: Hod;

@@ -310,16 +310,16 @@ export class UserService {
         // {
         //   relation: 'employees'
         // },
-        {
-          relation: 'profilePhoto'
-        },
-        { relation: 'address' },
-        {
-          relation: 'profile',
-        },
-        {
-          relation: 'device'
-        }
+        // {
+        //   // relation: 'profilePhoto'
+        // },
+        // { relation: 'address' },
+        // {
+        //   relation: 'profile',
+        // },
+        // {
+        //   relation: 'device'
+        // }
       ]
     };
 

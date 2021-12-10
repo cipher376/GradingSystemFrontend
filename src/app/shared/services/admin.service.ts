@@ -269,7 +269,7 @@ export class AdminService {
 
   /*************** Grading system user roles*************** */
   addUserToRole(role: string, userId: any) {
-    this.http.post<Role>(environment.api_root_url + `/users/${userId}/role`, { role, userId }).pipe(
+    return this.http.post<Role>(environment.api_root_url + `/users/${userId}/role`, { role, userId }).pipe(
       map(res => {
         console.log(res.role)
         return res as any;

@@ -1,0 +1,25 @@
+<div class="card">
+  <div class="card-header">
+    <strong>Assign course to programme</strong>
+  </div>
+  <div class="card-body" [formGroup]="assignForm">
+    <div class=" col">
+      <div class="form-group" *ngIf="programmeList.length>0">
+        <ng-select formControlName="programmeId" [allowClear]="false" [multiple]="false" [options]="programmeList||[]"
+          placeholder="Select programme">
+        </ng-select>
+      </div>
+      <div class="form-group" *ngIf="courseList.length>0">
+        <ng-select formControlName="courseId" [allowClear]="false" [multiple]="false" [options]="courseList||[]"
+          placeholder="Select course">
+        </ng-select>
+      </div>
+      <div class="col-12 col-sm-12 mb-3 ">
+        <div class="row">
+          <button type="button" class="btn btn-primary" (click)="assignCourse()">Assign course</button> &nbsp;&nbsp;
+          <button type="button" class="btn  btn-warning btn-sm" (click)="clear()">clear</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

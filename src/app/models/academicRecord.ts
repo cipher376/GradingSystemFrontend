@@ -7,8 +7,8 @@ export class AcademicRecord {
   transcriptUrl?: string;
   schoolName?: string;
   programme?: string;
-  yearOfCompletion?: string;
-  yearOfCommencement?: string;
+  yearOfCompletion?: Date;
+  yearOfCommencement?: Date;
   cgpa?: number;
   studentId?: string;
 

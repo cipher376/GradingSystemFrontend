@@ -1,1 +1,27 @@
-<p>create-course works!</p>
+<div class="card">
+  <div class="card-header">
+    <strong>Add or update Course</strong>
+  </div>
+  <div class="card-body" [formGroup]="courseForm">
+    <div class=" col">
+      <div class="form-group">
+        <input type="text" class="form-control" formControlName="name" placeholder="Course name">
+      </div>
+
+      <div class="form-group">
+        <input type="number" class="form-control" formControlName="creditHours" placeholder="Credit hours">
+      </div>
+
+      <div class="form-group">
+        <input type="text" class="form-control" formControlName="code" placeholder="Course code">
+      </div>
+
+      <div class="col-12 col-sm-12 mb-3 ">
+        <div class="row">
+          <button type="button" class="btn btn-primary" (click)="createCourse()">Create course</button> &nbsp;&nbsp;
+          <button type="button" class="btn  btn-warning btn-sm" (click)="clear()">clear</button>
+        </div>
+
+      </div>
+    </div>
+  </div>

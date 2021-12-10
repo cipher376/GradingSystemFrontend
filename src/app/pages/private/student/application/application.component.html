@@ -2,10 +2,23 @@
   <div class="card-header">
     <strong>Programme selection</strong>
   </div>
-  <div class="card-body">
+  <div class="card-body"  [formGroup]="programmeForm">
+    <div class=" col">
+      <div class="form-group" *ngIf="programmeList.length>0">
+        <ng-select formControlName="programmeId" [allowClear]="false" [multiple]="false" [options]="programmeList||[]"
+          placeholder="What programme do you want to study at Bishop's University">
+        </ng-select>
+      </div>
+
+      <div class="col-12 col-sm-12 mb-3 ">
+        <div class="row">
+          <button type="button" class="btn btn-primary" (click)="createStudent()">Save</button> &nbsp;&nbsp;
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
-<app-create-previous-school></app-create-previous-school>
+<app-create-previous-school *ngIf="student?.id" [Student]="student" [AcademicRecord]="getAcademicRecord()"></app-create-previous-school>
 
-<app-create-address></app-create-address>
+<app-create-address *ngIf="(student?.academicRecords||[]).length>0" (addressEvent)="saveAddress($event)"></app-create-address>
